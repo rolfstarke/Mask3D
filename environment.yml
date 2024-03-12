@@ -57,8 +57,9 @@ dependencies:
   - zlib=1.2.13=h5eee18b_0
   - zstandard=0.19.0=py310h5eee18b_0
   - pip
-variables:
-  PATH=/home/rolf/anaconda3/envs/mask3d_cuda113/bin:/home/rolf/.local/bin:/home/rolf/anaconda3/condabin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/local/cuda-11.3/bin
-  LD_LIBRARY_PATH=/usr/local/cuda-11.3/lib64
-  
+
 prefix: /opt/conda
+  - python
+  - pip:
+  - /usr/local/cuda-11.3/bin
+  - /usr/local/cuda-11.3/lib64
