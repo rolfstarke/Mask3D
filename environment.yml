@@ -60,6 +60,5 @@ dependencies:
 
 prefix: /opt/conda
   - python
-  - pip:
   - /usr/local/cuda-11.3/bin
   - /usr/local/cuda-11.3/lib64
