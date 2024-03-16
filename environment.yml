@@ -59,3 +59,8 @@ dependencies:
   - pip
 
 prefix: /opt/conda
+env:
+  PATH:
+    - /usr/local/cuda-11.3/bin
+  LD_LIBRARY_PATH:
+    - /usr/local/cuda-11.3/lib64
