@@ -11,11 +11,12 @@ export TORCH_CUDA_ARCH_LIST="6.0 6.1 6.2 7.0 7.2 7.5 8.0 8.6"
 
 conda env create -f environment.yml
 
-conda env config vars set LD_LIBRARY_PATH="/usr/local/cuda-11.3/lib64:$LD_LIBRARY_PATH" -n mask3d_cuda113
-
-conda env config vars set PATH="/usr/local/cuda-11.3/bin:$PATH" -n mask3d_cuda113
-
 conda activate mask3d_cuda113
+
+use this to add this tutorial to add the cuda directory to PATH on activation  
+export PATH="/usr/local/cuda-11.3/bin:$PATH"
+
+https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#saving-environment-variables
 
 pip install "cython<3.0.0" && pip install --no-build-isolation pyyaml==5.4.1
 
