@@ -20,12 +20,15 @@ https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environme
 
 pip install "cython<3.0.0" && pip install --no-build-isolation pyyaml==5.4.1
 
-pip install --no-build-isolation pycocotools==2.0.4
-
 pip install -r requirements_all.txt
 
+pip install --no-build-isolation pycocotools==2.0.4
+
 pip3 install torch==1.12.1+cu113 torchvision==0.13.1+cu113 --extra-index-url https://download.pytorch.org/whl/cu113
-pip3 install torch-scatter -f https://data.pyg.org/whl/torch-1.12.1+cu113.html
+
+
+pip install torch-scatter==2.1.0 -f https://data.pyg.org/whl/torch-1.12.1+cu113.html
+
 pip3 install 'git+https://github.com/facebookresearch/detectron2.git@710e7795d0eeadf9def0e7ef957eea13532e34cf' --no-deps
 
 mkdir third_party
@@ -43,7 +46,7 @@ git checkout 3e5726500896748521a6ceb81271b0f5b2c0e7d2
 make
 
 cd third_party/pointnet2
-python setup.py install
+python setup.py install --blas_include_dirs=/home/rolf/anaconda3/envs/mask3d_cuda113/include --blas=openblas
 
 cd ../../
 pip3 install pytorch-lightning==1.7.2
