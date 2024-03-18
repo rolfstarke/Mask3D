@@ -38,6 +38,7 @@ git clone --recursive "https://github.com/NVIDIA/MinkowskiEngine"
 cd MinkowskiEngine
 git checkout 02fc608bea4c0549b0a7b00ca1bf15dee4a0b228
 python setup.py install --force_cuda --blas=openblas
+# maybe python setup.py install --blas_include_dirs=/home/rolf/anaconda3/envs/mask3d_cuda113/include --blas=openblas
 
 cd ..
 git clone https://github.com/ScanNet/ScanNet.git
@@ -46,7 +47,8 @@ git checkout 3e5726500896748521a6ceb81271b0f5b2c0e7d2
 make
 
 cd third_party/pointnet2
-python setup.py install --blas_include_dirs=/home/rolf/anaconda3/envs/mask3d_cuda113/include --blas=openblas
+python setup.py install
+
 
 cd ../../
 pip3 install pytorch-lightning==1.7.2
