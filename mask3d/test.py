@@ -1,5 +1,4 @@
 from mask3d import get_model, load_mesh, prepare_data, map_output_to_pointcloud, save_colorized_mesh 
-import torch
 
 model = get_model('checkpoints/scannet200/scannet200_benchmark.ckpt')
 model.eval()
