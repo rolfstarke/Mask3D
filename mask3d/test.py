@@ -7,7 +7,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model.to(device)
 
 # load input data
-pointcloud_file = 'data/mp3d_scene1.ply'
+pointcloud_file = 'sweep60-62_test.ply'
 mesh = load_mesh(pointcloud_file)
 
 # prepare data
@@ -21,4 +21,4 @@ with torch.no_grad():
 labels = map_output_to_pointcloud(mesh, outputs, inverse_map)
 
 # save colorized mesh
-save_colorized_mesh(mesh, labels, 'data/mp3d_scene1_labelled.ply', colormap='scannet200')
+save_colorized_mesh(mesh, labels, 'data/sweep60-62_test.ply', colormap='scannet200')
