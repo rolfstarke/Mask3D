@@ -13,8 +13,13 @@ conda env create -f environment.yml
 
 conda activate mask3d_cuda113
 
+export TORCH_CUDA_ARCH_LIST="8.6"
+
 use this to add this tutorial to add the cuda directory to PATH on activation  
-export PATH="/usr/local/cuda-11.3/bin:$PATH"
+as well as an older g++ version
+`export PATH="$PATH:/usr/local/cuda-11.3/bin"
+CC=/usr/local/gcc-9.5/bin/g++
+CXX=/usr/local/gcc-9.5/bin/g++`
 
 https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#saving-environment-variables
 
@@ -54,6 +59,11 @@ cd ../../
 pip3 install pytorch-lightning==1.7.2
 
 pip install .
+
+
+#this might be necessaary
+#pip install --upgrade omegaconf
+
 
 ```
 
